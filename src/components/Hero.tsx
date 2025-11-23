@@ -142,18 +142,19 @@ export default function Hero() {
                             {/* List Items */}
                             <div className="space-y-4">
                                 {[
-                                    { label: "Duplicates", count: "1.671", gradient: "from-blue-600 to-blue-400" },
-                                    { label: "Similars", count: "1.671", gradient: "from-purple-600 to-purple-400" },
-                                    { label: "Blurry", count: "1.671", gradient: "from-orange-600 to-orange-400" },
-                                    { label: "Texts", count: "920", gradient: "from-gray-600 to-gray-400" },
-                                    { label: "Screenshots", count: "3.245", gradient: "from-indigo-600 to-indigo-400" },
-                                    { label: "Others", count: "17.115", gradient: "from-green-600 to-green-400" },
+                                    { label: "Duplicates", count: "1.671", color: "bg-blue-500", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" },
+                                    { label: "Similars", count: "1.671", color: "bg-purple-500", img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop" },
+                                    { label: "Blurry", count: "1.671", color: "bg-orange-500", img: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&h=100&fit=crop" },
+                                    { label: "Texts", count: "920", color: "bg-gray-500", img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=100&h=100&fit=crop" },
+                                    { label: "Screenshots", count: "3.245", color: "bg-indigo-500", img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=100&h=100&fit=crop" },
+                                    { label: "Others", count: "17.115", color: "bg-green-500", img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=100&h=100&fit=crop" },
                                 ].map((item, i) => (
                                     <div key={i} className="flex items-center justify-between group cursor-pointer">
                                         <div className="flex items-center gap-4">
-                                            <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} border border-white/5 flex items-center justify-center relative overflow-hidden`}>
-                                                <div className="absolute inset-0 bg-black/20"></div>
-                                                {i === 0 && <div className="absolute inset-0 bg-blue-500/30 blur-md"></div>}
+                                            <div className="w-14 h-14 rounded-2xl overflow-hidden relative border border-white/5">
+                                                <img src={item.img} alt={item.label} className="w-full h-full object-cover opacity-80" />
+                                                {/* Glow effect behind icon */}
+                                                {i === 0 && <div className="absolute inset-0 bg-blue-500/20 blur-md"></div>}
                                             </div>
                                             <span className="text-lg font-medium text-white">{item.label}</span>
                                         </div>
