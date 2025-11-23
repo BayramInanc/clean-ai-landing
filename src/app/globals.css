@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+}
+
+/* Custom Utilities for Glassmorphism and Glows */
+@layer utilities {
+  .glass {
+    @apply bg-[#1C1C1E]/60 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)];
+  }
+  
+  .glass-card {
+    @apply bg-[#1C1C1E] border border-[#2C2C2E] hover:border-[#3A3A3C] transition-all duration-300;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-400;
+  }
+  
+  .bg-gradient-midnight {
+    @apply bg-gradient-to-b from-black via-[#0a0a0a] to-[#121212];
+  }
+
+  @keyframes shimmer {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-black text-white antialiased selection:bg-blue-500/30;
+}
