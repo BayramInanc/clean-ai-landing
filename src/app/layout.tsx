@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <body className={`${inter.className} bg-black text-white antialiased selection:bg-blue-500/30`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} bg-white text-black antialiased selection:bg-[#0066FF]/20`}>
         {children}
       </body>
     </html>

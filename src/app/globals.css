@@ -2,37 +2,22 @@
 
 @theme {
   --font-sans: var(--font-inter);
+  
+  --color-background: #FFFFFF;
+  --color-surface: #F5F5F7;
+  --color-surface-highlight: #E5E5E5;
+  --color-border: #E5E5E5;
+  --color-accent: #0066FF;
 }
 
-/* Custom Utilities for Glassmorphism and Glows */
 @layer utilities {
-  .glass {
-    @apply bg-[#1C1C1E]/60 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)];
-  }
-  
-  .glass-card {
-    @apply bg-[#1C1C1E] border border-[#2C2C2E] hover:border-[#3A3A3C] transition-all duration-300;
+  .text-gradient-blue {
+    @apply text-[#0066FF];
   }
 
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-400;
-  }
-  
-  .bg-gradient-midnight {
-    @apply bg-gradient-to-b from-black via-[#0a0a0a] to-[#121212];
-  }
-
-  @keyframes shimmer {
-    from {
-      background-position: 0 0;
-    }
-    to {
-      background-position: -200% 0;
-    }
-  }
-
-  .animate-shimmer {
-    animation: shimmer 2s linear infinite;
+  .bg-dot-pattern {
+    background-image: radial-gradient(#E5E5E5 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 }
 
@@ -41,5 +26,10 @@ html {
 }
 
 body {
-  @apply bg-black text-white antialiased selection:bg-blue-500/30;
+  @apply bg-white text-black antialiased selection:bg-[#0066FF]/20;
+  font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply tracking-tight text-balance;
 }
